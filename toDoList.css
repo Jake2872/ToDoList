@@ -1,0 +1,234 @@
+html {
+
+    background-color: rgb(236, 236, 236);
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+  
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px 10px 80px 10px;
+}
+
+
+h1 {
+    font-size: 1.55rem;
+    text-align: center;
+    color: rgb(77, 11, 68);
+    letter-spacing: 4px;
+}
+
+#inputAndAddContainer { /*parents input + add button*/
+
+display: flex;
+justify-content: center;
+align-items: center;
+max-height: 43px;
+overflow: hidden;
+}
+
+input[type="text"] {
+
+width: 70%;
+padding-left: 10px;
+border-radius: 0px; /*prevent default ios radius*/
+box-sizing: border-box;
+height: 43px; /*mess around with height and general border of input field so the focus border is visible*/
+font-size: 20px;
+border: 1px solid transparent;
+
+}
+input[type="text"]:focus {
+border: 1px solid rgb(217, 185, 253);
+outline: none; /*removes orange onfocus outline*/
+}
+
+button {
+    box-sizing: border-box;
+    width: 90px;
+    height: 43px;
+    letter-spacing: 3px;
+    background-color: rgb(54, 2, 47);
+    color: rgb(229, 227, 231);
+    border: none;
+    font-size: 20px;
+
+
+   
+}
+
+
+button:focus {
+    outline: none;
+}
+
+.toggleColorInput {
+    display: none;
+}
+
+
+.buttonClickEventAnimation:hover {
+
+    animation-name: buttonClick;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+
+}
+
+@keyframes buttonClick {
+
+    0% {background-color: normal; }
+    100% { background-color: rgb(116, 34, 119); }
+}
+
+
+ul {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 1px;
+    
+}
+
+li {
+    font-size: 25px;
+    background-color: #fff;
+    color: rgb(54, 2, 47);
+    margin: 8% 4%;
+    overflow: hidden;
+    padding: 15px;
+  
+    transition-property: all;
+    transition-duration: .4s;
+    transition-timing-function: ease-out;
+    word-break: break-all; /*so long words don't overflow*/
+}
+
+li:first-of-type {
+    animation-name: slideIn;
+    animation-duration: 1.35s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+}
+
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.liTextLineThrough {
+
+    opacity: 0.5;
+    text-decoration: line-through;
+    color: gray;
+}
+
+
+.deleteSpan { 
+
+    display: none; /*until user checks it off*/
+}
+
+.removeInput { /*removes color picker so X is visible*/
+
+    display: none;
+}
+
+.mySpan { /*x span*/
+
+    color: rgb(39, 8, 8);
+    float: right;
+    padding-right: 5px;
+    font-size: 30px;
+    opacity: 1;
+    font-family: sans-serif;
+    color: red;
+
+    transition-property: background-color, color;
+    transition-duration: 0.50s, 0.50s;
+    transition-timing-function: ease-in;
+    
+    opacity: 0.95;
+}
+
+.mySpan:hover {
+  opacity: 1;
+  color: rgb(190, 128, 11);
+  
+}
+
+.mySpan, .colorPickerInput {
+
+margin: 0 25px 0 10px;
+}
+
+
+.colorPickerInput {
+
+    float: right;
+    height: 30px;
+    width: 30px;
+    padding: 1px;
+    border-radius: 20px;
+    background-color: #bc01a2;
+    border: 1px solid transparent;    
+}
+
+.colorPickerInput:focus {
+    outline: none;
+}
+
+.AddShortcut__button { /* plus button at bottom*/
+
+    box-sizing: border-box;
+    background-color: rgb(45, 95, 60);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 50px;
+
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+
+    display: flex;
+    justify-content: center;
+    
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    transition-property: background-color, color;
+    transition-duration: 0.50s, 0.50s;
+    transition-timing-function: ease-in;
+    
+    opacity: 0.95;
+    align-items: center;
+    font-family: normal; /*other font didn't quite center vertically*/
+}
+
+.transparentPlusToggle {
+    opacity: 1;
+    color: transparent;
+    background-color: transparent;
+
+}
+
