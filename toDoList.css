@@ -2,6 +2,9 @@ html {
 
     background-color: rgb(236, 236, 236);
     font-family: 'Tajawal', sans-serif;
+
+    -webkit-tap-highlight-color: transparent;
+    /*prevents event delegation of the UL to highlight entire ul when li is clicked*/
 }
 
 body {
@@ -214,7 +217,7 @@ margin: 0 25px 0 10px;
     justify-content: center;
     
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+    
 
     transition-property: background-color, color;
     transition-duration: 0.50s, 0.50s;
