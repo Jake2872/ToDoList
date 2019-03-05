@@ -150,6 +150,10 @@ li:first-of-type {
     display: none; /*until user checks it off*/
 }
 
+.displayX {
+    display: block;
+}
+
 .removeInput { /*removes color picker so X is visible*/
 
     display: none;
