@@ -22,8 +22,8 @@ if(e.target.className !== "mySpan") return;
 
 
 function colorFunction (e) {
-    
-    e.target.parentElement.style.backgroundColor = `${myTarget.value}`;
+
+    e.target.parentElement.style.backgroundColor = `${e.target.value}`;
 
     }
 
@@ -44,18 +44,7 @@ toDoItem.appendChild(textNode);
 
 inputField.value = ""; //clears input field after item is added. Must precede if isMobile 
 
-//only add color picker to android phones (due to higher support)
-if(isMobile.Android()) {
 
-let colorPicker = document.createElement('input');
-colorPicker.setAttribute("type", "color");
-//colorPicker.className = "toggleColorInput";
-colorPicker.className = "colorPickerInput";
-colorPicker.setAttribute("value", "#bc01a2");
-toDoItem.appendChild(colorPicker);
-
-document.getElementsByClassName('colorPickerInput')[0].addEventListener("input", colorFunction);
-}
 
 //deleteButtonSpan refers to the "x" that appears after user touches list item
 let deleteButtonSpan = document.createElement("span");
@@ -67,6 +56,20 @@ toDoItem.appendChild(deleteButtonSpan);
 
 listContainer.insertBefore(listContainer.appendChild(toDoItem), listItem[0]);
 //place new listItems on top (first)
+
+//only add color picker to android phones (due to higher support)
+if(isMobile.Android()) {
+
+    let colorPicker = document.createElement('input');
+    colorPicker.setAttribute("type", "color");
+    //colorPicker.className = "toggleColorInput";
+    colorPicker.className = "colorPickerInput";
+    colorPicker.setAttribute("value", "#bc01a2");
+    toDoItem.appendChild(colorPicker);
+    
+    document.getElementsByClassName('colorPickerInput')[0].addEventListener("input", colorFunction);
+    }
+
 
 listContainer.addEventListener("click", taskCompleted);
 
